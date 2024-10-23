@@ -1,0 +1,16 @@
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    ports:
+      - "9090:9090"
+      - "50000:50000"
+    restart: on-failure
+    volumes:
+      - jenkins_home:/var/jenkins_home
+volumes:
+  jenkins_home:
+    external: true
