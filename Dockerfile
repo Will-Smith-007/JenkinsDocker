@@ -4,6 +4,7 @@ LABEL authors="simon"
 COPY --chown=jenkins:jenkins certificate.pfx /var/lib/jenkins/certificate.pfx
 COPY --chown=jenkins:jenkins https.key /var/lib/jenkins/pk
 ENV JENKINS_OPTS="--httpPort=-1 --httpsPort=9090 --httpsKeyStore=/var/lib/jenkins/certificate.pfx --httpsKeyStorePassword=superStrongPassword"
+ENV JAVA_OPTS="-Dfile.encoding=UTF-8"
 
 # Install necessary packages for running Angular Cypress and Karma tests
 USER root

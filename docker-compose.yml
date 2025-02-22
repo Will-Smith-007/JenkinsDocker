@@ -13,4 +13,3 @@ services:
       - jenkins_home:/var/jenkins_home
 volumes:
   jenkins_home:
-    external: true
